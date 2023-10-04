@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useNavigate, Link } from "react-router-dom"; // Importa Link y useNavigate desde React Router
-import { Button } from "react-bootstrap";
+import { useNavigate, Link } from "react-router-dom"; 
 
 export default function Login() {
   const [username, setUsername] = useState("");

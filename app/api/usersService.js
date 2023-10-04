@@ -1,4 +1,5 @@
 export let userSelectedUserService = {};
+export let tempUsersListAPI = [];
 
 export async function getUsersData() {
     try {
@@ -13,7 +14,8 @@ export async function getUsersData() {
         const { password, ...rest } = user;
         return rest;
       });
-  
+      
+      tempUsersListAPI = filteredData;
       return filteredData;
     } catch (error) {
       console.error("Error al obtener datos:", error);

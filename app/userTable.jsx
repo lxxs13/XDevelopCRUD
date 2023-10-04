@@ -1,18 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { setUserSelectedUser } from "./api/users.service";
+import { setUserSelectedUser } from "./api/usersService";
 
 export default function UserTable({ users, onDeleteUser }) {
   const handleDeleteClick = (userId) => {
     onDeleteUser(userId);
   };
 
-  const reasignar = (user) => {
+  const handleReassign = (user) => {
     setUserSelectedUser(user);
   };
 
   return (
-    <div>
+    <div className="table-responsive">
       <table className="table">
         <thead>
           <tr>
@@ -34,10 +34,10 @@ export default function UserTable({ users, onDeleteUser }) {
               <td>{user.username}</td>
               <td>{user.email}</td>
               <td>
-                <Link to={`/users/${user.id}`}>
+                <Link to={"/users/info"}>
                   <button
                     className="btn btn-outline-info"
-                    onClick={() => reasignar(user)}
+                    onClick={() => handleReassign(user)}
                   >
                     Ver m&aacute;s
                   </button>

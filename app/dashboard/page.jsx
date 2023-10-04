@@ -1,26 +1,52 @@
 "use client";
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Header from "../components/header";
+import User from "../users/page";
+import Product from "../products/page";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Dashboard() {
-  useEffect(() => {
-    const storedToken = localStorage.getItem("Token");
+  // const navigate = useNavigate();
+  const [showUser, setShowUser] = useState(false);
+  const [showProduct, setShowProduct] = useState(false);
 
-    if (!storedToken) {
-      window.location.href = "/";
-    }
-  }, []);
+  // useEffect(() => {
+  //   const storedToken = localStorage.getItem("Token");
+
+  //   if (!storedToken) {
+  //     navigate("/");
+  //   }
+  // }, [navigate]);
+
+  const toggleUserDetails = () => {
+    setShowUser(false);
+  };
+
+  const toggleUser = () => {
+    setShowUser(true);
+    setShowProduct(false);
+  };
+
+  const toggleProduct = () => {
+    setShowProduct(true);
+    setShowUser(false);
+  };
 
   return (
     <>
-      <h1>Bienvenido!</h1>
-      <Link
-        to={{
-          pathname: `/users`,
-        }}
-      >
-        <button className="btn btn-outline-info">Usuarios</button>
-      </Link>
+      <Header />
+      <div className="p-2 d-flex justify-content-center align-items-center pt-2">
+        <button className="btn btn-primary m-2" onClick={toggleUser}>
+          Ir a Usuarios
+        </button>
+
+        <button className="btn btn-primary" onClick={toggleProduct}>
+          Ir a Productos
+        </button>
+      </div>
+      {showUser && <User />}
+      {showProduct && <Product />}
     </>
   );
 }
