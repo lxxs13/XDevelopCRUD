@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate, Link } from "react-router-dom"; 
