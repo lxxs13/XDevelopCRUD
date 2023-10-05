@@ -3,7 +3,7 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./login/page";
 import Dashboard from "./dashboard/page";
-import UserDetails from "./userDetails";
+import UserDetails from "./UserDetails";
 import ProductDetails from "./productDetails";
 import "bootstrap/dist/css/bootstrap.min.css";
 
