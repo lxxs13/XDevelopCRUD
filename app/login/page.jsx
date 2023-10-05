@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { useNavigate, Link } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom"; 
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -26,7 +25,7 @@ export default function Login() {
         const data = await response.json();
         const token = data.token;
         localStorage.setItem("Token", token);
-        navigate("/dashboard"); // Utiliza navigate para redirigir al usuario al dashboard
+        navigate("/dashboard");
       } else {
         setError("Inicio de sesión fallido. Verifica tus credenciales.");
       }

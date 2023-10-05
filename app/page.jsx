@@ -7,7 +7,7 @@ import UserDetails from "./UserDetails";
 import ProductDetails from "./productDetails";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function Home() {
+export default function Home() {
   return (
     <>
       <BrowserRouter>
@@ -21,5 +21,3 @@ function Home() {
     </>
   );
 }
-
-export default Home;

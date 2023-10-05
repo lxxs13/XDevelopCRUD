@@ -7,21 +7,17 @@ import Product from "../products/page";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Dashboard() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [showUser, setShowUser] = useState(false);
   const [showProduct, setShowProduct] = useState(false);
 
-  // useEffect(() => {
-  //   const storedToken = localStorage.getItem("Token");
+  useEffect(() => {
+    const storedToken = localStorage.getItem("Token");
 
-  //   if (!storedToken) {
-  //     navigate("/");
-  //   }
-  // }, [navigate]);
-
-  const toggleUserDetails = () => {
-    setShowUser(false);
-  };
+    if (!storedToken) {
+      navigate("/");
+    }
+  }, [navigate]);
 
   const toggleUser = () => {
     setShowUser(true);
